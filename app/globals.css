@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   CINEMATIC NOSTALGIA - Award-Winning Aesthetics
+   ======================================== */
+
+/* Base Colors */
+:root {
+  --velvet-purple: #1a0b2e;
+  --espresso: #2a1b15;
+  --rose-gold: #e0aaff;
+  --neon-amber: #fbbf24;
+  --warm-cream: #fff8e7;
+}
+
+/* Premium Typography */
+.serif-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.mono-detail {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Film Grain Overlay */
+.film-grain::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Velvet Background */
+.bg-velvet {
+  background: linear-gradient(180deg, #1a0b2e 0%, #0f0618 50%, #1a0b2e 100%);
+}
+
+.bg-espresso {
+  background: linear-gradient(180deg, #2a1b15 0%, #1a0f0a 50%, #2a1b15 100%);
+}
+
+/* Rose Gold Glow */
+.glow-rose {
+  text-shadow: 0 0 20px rgba(224, 170, 255, 0.6), 0 0 40px rgba(224, 170, 255, 0.3);
+}
+
+.glow-amber {
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.6), 0 0 40px rgba(251, 191, 36, 0.3);
+}
+
+.box-glow-rose {
+  box-shadow: 0 0 30px rgba(224, 170, 255, 0.4), 0 0 60px rgba(224, 170, 255, 0.2);
+}
+
+.box-glow-amber {
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.4), 0 0 60px rgba(251, 191, 36, 0.2);
+}
+
+/* Screen Shake Animation */
+@keyframes screenShake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-5px, -3px) rotate(-0.5deg); }
+  20% { transform: translate(5px, 2px) rotate(0.5deg); }
+  30% { transform: translate(-4px, 4px) rotate(-0.3deg); }
+  40% { transform: translate(4px, -2px) rotate(0.3deg); }
+  50% { transform: translate(-3px, 3px) rotate(-0.2deg); }
+  60% { transform: translate(3px, -3px) rotate(0.2deg); }
+  70% { transform: translate(-2px, 2px) rotate(-0.1deg); }
+  80% { transform: translate(2px, -1px) rotate(0.1deg); }
+  90% { transform: translate(-1px, 1px) rotate(0deg); }
+}
+
+.screen-shake {
+  animation: screenShake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Kinetic Text Cycle */
+@keyframes textCycle {
+  0%, 18% { opacity: 1; transform: translateY(0); }
+  20%, 22% { opacity: 0; transform: translateY(-20px); }
+  24%, 100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Glow Pulse Background */
+@keyframes glowPulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.glow-pulse-bg {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Marquee Scroll */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-scroll {
+  animation: marquee 20s linear infinite;
+}
+
+/* Party Strobe Effect */
+@keyframes partyStrobe {
+  0% { background-color: rgba(251, 191, 36, 0.1); }
+  14% { background-color: rgba(168, 85, 247, 0.1); }
+  28% { background-color: rgba(236, 72, 153, 0.1); }
+  42% { background-color: rgba(59, 130, 246, 0.1); }
+  56% { background-color: rgba(16, 185, 129, 0.1); }
+  70% { background-color: rgba(251, 191, 36, 0.1); }
+  84% { background-color: rgba(224, 170, 255, 0.1); }
+  100% { background-color: rgba(251, 191, 36, 0.1); }
+}
+
+.party-strobe {
+  animation: partyStrobe 2s linear infinite;
+}
+
+/* Polaroid Style */
+.polaroid {
+  background: #fff8e7;
+  padding: 12px 12px 40px 12px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* 3D Cake Low-Poly Effect */
+.low-poly-face {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    transparent 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+/* Warm Candle Lighting */
+.candle-warm {
+  background: radial-gradient(ellipse at center bottom, 
+    rgba(251, 191, 36, 0.3) 0%, 
+    rgba(251, 191, 36, 0.1) 30%,
+    transparent 70%
+  );
+}
+
+/* Glassmorphism base */
+.glass {
+  @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-lg;
+}
+
+.glass-dark {
+  @apply backdrop-blur-md bg-slate-900/40 border border-white/10 rounded-lg;
+}
+
+/* Gradient backgrounds */
+.gradient-gold-purple {
+  background: linear-gradient(135deg, #fbbf24 0%, #a855f7 100%);
+}
+
+.gradient-purple-blue {
+  background: linear-gradient(135deg, #a855f7 0%, #0ea5e9 100%);
+}
+
+/* Smooth fade in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Glow effect */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.6), 0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+.glow-effect-sm {
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+}
+
+/* Candle flame flicker */
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+  25% {
+    opacity: 0.95;
+    transform: translateY(-2px) scaleY(1.05);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-1px) scaleY(0.98);
+  }
+  75% {
+    opacity: 0.98;
+    transform: translateY(1px) scaleY(1.02);
+  }
+}
+
+.flame-flicker {
+  animation: flicker 0.3s ease-in-out infinite;
+}
+
+/* Smoke animation */
+@keyframes smokeRise {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(1.5);
+  }
+}
+
+.smoke-rise {
+  animation: smokeRise 2s ease-out forwards;
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.6), 0 0 40px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.8), 0 0 60px rgba(168, 85, 247, 0.5);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Cinema-style text reveal */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.text-reveal {
+  animation: textReveal 0.8s ease-out;
+}
+
+/* Cinematic fade + scale */
+@keyframes cinemaScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.cinema-scale {
+  animation: cinemaScale 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Image overlay darken on hover */
+@keyframes imageDarken {
+  to {
+    filter: brightness(0.7) contrast(1.1);
+  }
+}
+
+/* Pointer hover effect for cards */
+.card-hover:hover {
+  cursor: pointer;
+}
+
